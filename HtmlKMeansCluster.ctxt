@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=HtmlKMeansCluster
+comment0.text=\n\ \ This\ is\ a\ Java\ program\ with\ the\ purpose\ of\ extracting\ and\ analyzing\ Pubmed\ articles\ about\ Diabetes.\n\ \ \n\ \ Here\ are\ the\ key\ tasks\ executed\ by\ the\ program\:\n\ \ -\ Retrieve\ at\ least\ 10\ different\ pages\ of\ text\ from\ Pubmed\n\ \ -\ Clean,\ tokenize\ and\ normalize\ the\ page\ to\ optimally\ get\ only\ the\ actual\ textual\ content\n\ \ -\ Represent\ the\ pages\ as\ vectors\ of\ binary\ values,\ using\ a\ simple\ hashing\ trick\ (token\ is\ present\ in\ the\ article\ or\ not).\n\ \ -\ Run\ a\ simple\ (1\ iteration)\ K-means\ implementation\ built\ from\ scratch,\ to\ cluster\ those\ pages\ into\ 3\ groups\n\ \ -\ Present\ results\ and\ discuss\ briefly\ some\ similarities\ between\ the\ pages\ in\ the\ same\ cluster\n\ \ -\ Identify\ key\ characteristics\ of\ pages\ in\ different\ clusters\n\ \ \n\ \ If\ you\ have\ any\ questions\ or\ suggestions,\ please\ send\ an\ email\ to\ dr.tournier@gmail.com\n\ \ \n\ \ Thank\ you\!\n
+comment1.params=urls
+comment1.target=java.lang.String[]\ htmlRetrieve(java.util.List)
+comment1.text=\n\ In\ this\ method,\ we\ are\ using\ the\ JSoup\ library\ to\ extract\ the\ titles\ and\ the\ div\ class\ "abstr"\ from\ \n\ Pubmed.gov\ abstract\ articles.\ \ These\ articles\ were\ selected\ typing\ "diabetes"\ as\ keyword,\ and\ filtering\ for\ free-fulltext\n\ availability.\ This\ method\ will\ return\ an\ Array\ of\ Strings\ with\ the\ extracted\ abstracts.\n
+comment2.params=texts
+comment2.target=java.util.List[]\ cleanTokenize(java.lang.String[])
+comment2.text=\n\ In\ this\ method,\ we\ are\ using\ regexp\ and\ a\ list\ of\ stopwords\ to\ unnest\ and\ clean\ the\ tokens\ from\ the\ text.\n\ As\ a\ result,\ we\ will\ have\ a\ List\ Array\ with\ one\ List\ of\ cleansed\ tokens\ for\ each\ article\ in\ each\ Array\ slot.\n\ Details\ on\ token\ normalization\ in\ the\ comments\ within\ this\ method.\n
+comment3.params=texts
+comment3.target=java.util.List[]\ hashTokens(java.util.List[])
+comment3.text=\n\ In\ this\ method,\ we\ are\ using\ a\ simple\ hashing\ method\ to\ build\ the\ feature\ vectors.\n\ \n\ The\ approach\ chosen\ was\ to\ building\ a\ vector\ containing\ all\ unique\ tokens\ from\ all\ articles,\ then\n\ using\ this\ vector\ of\ unique\ tokens\ to\ build\ a\ token\ vector\ for\ each\ one\ of\ the\ 10\ articles.\n\ \n\ As\ hashing\ strategy,\ we\ built\ vectors\ of\ binaries\ (0\:\ token\ NOT\ in\ the\ abstract\ ;\ 1\:\ token\ in\ the\ abstract),\ \n\ for\ the\ sake\ of\ improving\ model\ explainability.\n\ \n\ Finally,\ this\ method\ returns\ an\ Array\ with\ 10\ vectors\ of\ binaries,\ representing\ the\ tokens\ present\ in\ the\ article.\n
+comment4.params=arrays
+comment4.target=void\ kMeansCluster(java.util.List[])
+comment4.text=\n\ In\ this\ method,\ we\ build\ a\ K-Means\ Cluster\ implementation\ from\ scratch.\n\ \n\ Further\ details\ about\ model\ hyperparameters\ can\ be\ found\ in\ the\ comments\ below.\n\ \n\ This\ method\ will\ execute\ the\ KMeans\ algorithm\ and\ will\ print\ the\ distance\ for\ each\ of\ the\ 3\ centroids,\ and\ the\ \n\ cluster\ membership\ assigned\ for\ each\ article\ as\ a\ result,\ as\ well.\n
+comment5.params=
+comment5.target=java.util.List\ testURLs()
+comment5.text=\ \n\ These\ URLs\ are\ from\ the\ abstracts\ that\ were\ extracted\ from\ Pubmed\ website\ (https\://pubmed.gov),\ \n\ using\ the\ keyword\ "diabetes",\ and\ selecting\ free-full-text-articles\n
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+comment6.text=\ \n\ Finally,\ in\ the\ main\ method,\ we\ build\ the\ data\ pipeline,\ connecting\ each\ method\ in\ linear\ sequence.\n\ \n\ Discussion\ and\ comments\ are\ also\ printed\ here.\n
+numComments=7
