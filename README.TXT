@@ -15,3 +15,8 @@ This is a Java program with the purpose of extracting and analyzing Pubmed artic
  *  If you have any questions or suggestions, please send an email to dr.tournier@gmail.com
  *  
  *  Thank you!
+ 
+ * PS - You will also find here a POC (Proof of Concept) on how to implement a simple K-Means Cluster model in Excel from 
+ * scratch. Have fun!
+ 
+ 
