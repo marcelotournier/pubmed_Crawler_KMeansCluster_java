@@ -343,7 +343,7 @@ public class HtmlKMeansCluster {
         System.out.println("Pubmed related to Diabetes, and try to test other K-values, analyzing the variance between groups to");
         System.out.println("find the best number of clusters for the problem. Finally, other unsupervised methods can be tried,");
         System.out.println("to check if further business and/or research value can be found for the company.\n");
-        System.out.println("Finally, I would like to thank Apixio for the challenge. It was very nice to build an algorithm from");
+        System.out.println("Finally, I would like to thank you and your company for the challenge. It was very nice to build an algorithm from");
         System.out.println("scratch, and noticing that even with very simple models, we can add business value in healthcare.");
         System.out.println("\n\n   ");
     }
